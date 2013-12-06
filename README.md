@@ -3,9 +3,9 @@ yum-fedora Cookbook
 
 The yum-fedora cookbook takes over management of the default
 repositoryids that ship with Fedora systems. It allows attribute
-manipulation of fedora, fedora-debuginfo, fedora-source, updates,
-updates-debuginfo, updates-source, updates-testing,
-updates-testing-debuginfo, and updates-testing-source
+manipulation of `fedora`, `fedora-debuginfo`, `fedora-source`, `updates`,
+`updates-debuginfo`, `updates-source`, `updates-testing`,
+`updates-testing-debuginfo`, and `updates-testing-source`
 
 Requirements
 ------------
