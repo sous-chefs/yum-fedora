@@ -107,12 +107,12 @@ Recipes
   recipe during compilation.
   
 ```ruby
-  yum_repository 'base' do
-    mirrorlist 'http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os'
-    description 'CentOS-$releasever - Base'
+  yum_repository 'fedora' do
+    mirrorlist 'https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch'
+    description 'Fedora $releasever - $basearch'
     enabled true
     gpgcheck true
-    gpgkey 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6'
+    gpgkey 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
   end
 ```
 
