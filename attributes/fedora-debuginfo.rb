@@ -1,5 +1,3 @@
-# Encoding: utf-8
-
 default['yum']['fedora-debuginfo']['repositoryid'] = 'fedora-debuginfo'
 default['yum']['fedora-debuginfo']['description'] = 'Fedora $releasever - $basearch - Debug'
 default['yum']['fedora-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=fedora-debug-$releasever&arch=$basearch'

@@ -1,5 +1,3 @@
-# Encoding: utf-8
-
 default['yum']['updates-source']['repositoryid'] = 'updates-source'
 default['yum']['updates-source']['description'] = 'Fedora $releasever - Updates Source'
 default['yum']['updates-source']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=updates-released-source-f$releasever&arch=$basearch'
