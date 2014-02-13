@@ -2,7 +2,19 @@ require 'spec_helper'
 
 describe 'yum-fedora::default' do
   context 'yum-fedora::default uses default attributes' do
-    let(:chef_run) { ChefSpec::Runner.new(:step_into => ['yum_repository']).converge(described_recipe) }
+    let(:chef_run) do
+      ChefSpec::Runner.new do |node|
+        node.set['yum']['fedora']['managed'] = true
+        node.set['yum']['fedora-debuginfo']['managed'] = true
+        node.set['yum']['fedora-source']['managed'] = true
+        node.set['yum']['updates']['managed'] = true
+        node.set['yum']['updates-debuginfo']['managed'] = true
+        node.set['yum']['updates-source']['managed'] = true
+        node.set['yum']['updates-testing']['managed'] = true
+        node.set['yum']['updates-testing-debuginfo']['managed'] = true
+        node.set['yum']['updates-testing-source']['managed'] = true
+      end.converge(described_recipe)
+    end
 
     context 'removing stock configuration files' do
       it 'deletes /etc/yum.repos.d/fedora-updates.repo' do
@@ -27,10 +39,6 @@ describe 'yum-fedora::default' do
       }.each do |repo|
       it "creates yum_repository[#{repo}]" do
         expect(chef_run).to create_yum_repository(repo)
-      end
-
-      it "steps into yum_repository and creates template[/etc/yum.repos.d/#{repo}.repo]" do
-        expect(chef_run).to render_file("/etc/yum.repos.d/#{repo}.repo")
       end
     end
   end

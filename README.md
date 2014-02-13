@@ -21,6 +21,7 @@ default['yum']['fedora']['repositoryid'] = 'fedora'
 default['yum']['fedora']['description'] = 'Fedora $releasever - $basearch'
 default['yum']['fedora']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch'
 default['yum']['fedora']['enabled'] = true
+default['yum']['fedora']['managed'] = true
 default['yum']['fedora']['metadata_expire'] = '7d'
 default['yum']['fedora']['gpgcheck'] = true
 default['yum']['fedora']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
@@ -31,6 +32,7 @@ default['yum']['fedora-debuginfo']['repositoryid'] = 'fedora-debuginfo'
 default['yum']['fedora-debuginfo']['description'] = 'Fedora $releasever - $basearch - Debug'
 default['yum']['fedora-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=fedora-debug-$releasever&arch=$basearch'
 default['yum']['fedora-debuginfo']['enabled'] = false
+default['yum']['fedora-debuginfo']['managed'] = false
 default['yum']['fedora-debuginfo']['metadata_expire'] = '7d'
 default['yum']['fedora-debuginfo']['gpgcheck'] = true
 default['yum']['fedora-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
@@ -41,6 +43,7 @@ default['yum']['fedora-source']['repositoryid'] = 'fedora-source'
 default['yum']['fedora-source']['description'] = 'Fedora $releasever - Source'
 default['yum']['fedora-source']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=fedora-source-$releasever&arch=$basearch'
 default['yum']['fedora-source']['enabled'] = false
+default['yum']['fedora-source']['managed'] = false
 default['yum']['fedora-source']['metadata_expire'] = '7d'
 default['yum']['fedora-source']['gpgcheck'] = true
 default['yum']['fedora-source']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
@@ -51,6 +54,7 @@ default['yum']['updates']['repositoryid'] = 'updates'
 default['yum']['updates']['description'] = 'Fedora $releasever - $basearch - Updates'
 default['yum']['updates']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&arch=$basearch'
 default['yum']['updates']['enabled'] = true
+default['yum']['updates']['managed'] = true
 default['yum']['updates']['gpgcheck'] = true
 default['yum']['updates']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
 ```
@@ -60,6 +64,7 @@ default['yum']['updates-debuginfo']['repositoryid'] = 'updates-debuginfo'
 default['yum']['updates-debuginfo']['description'] = 'Fedora $releasever - $basearch - Updates - Debug'
 default['yum']['updates-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=updates-released-debug-f$releasever&arch=$basearch'
 default['yum']['updates-debuginfo']['enabled'] = false
+default['yum']['updates-debuginfo']['managed'] = false
 default['yum']['updates-debuginfo']['gpgcheck'] = true
 default['yum']['updates-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
 ```
@@ -78,6 +83,7 @@ default['yum']['updates-testing']['repositoryid'] = 'updates-testing'
 default['yum']['updates-testing']['description'] = 'Fedora $releasever - $basearch - Test Updates'
 default['yum']['updates-testing']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=updates-testing-f$releasever&arch=$basearch'
 default['yum']['updates-testing']['enabled'] = false
+default['yum']['updates-testing']['managed'] = false
 default['yum']['updates-testing']['gpgcheck'] = true
 default['yum']['updates-testing']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
 ```
@@ -87,6 +93,7 @@ default['yum']['updates-testing-debuginfo']['repositoryid'] = 'updates-testing-d
 default['yum']['updates-testing-debuginfo']['description'] = 'Fedora $releasever - $basearch - Test Updates Debug'
 default['yum']['updates-testing-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=updates-testing-debug-f$releasever&arch=$basearch'
 default['yum']['updates-testing-debuginfo']['enabled'] = false
+default['yum']['updates-testing-debuginfo']['managed'] = false
 default['yum']['updates-testing-debuginfo']['gpgcheck'] = true
 default['yum']['updates-testing-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
 ```
@@ -96,6 +103,7 @@ default['yum']['updates-testing-source']['repositoryid'] = 'updates-testing-sour
 default['yum']['updates-testing-source']['description'] = 'Fedora $releasever - Test Updates Source'
 default['yum']['updates-testing-source']['mirrorlist'] = 'https://mirrors.fedoraproject.org/metalink?repo=updates-testing-source-f$releasever&arch=$basearch'
 default['yum']['updates-testing-source']['enabled'] = false
+default['yum']['updates-testing-source']['managed'] = false
 default['yum']['updates-testing-source']['gpgcheck'] = true
 default['yum']['updates-testing-source']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
 ```
@@ -132,10 +140,13 @@ default_attributes(
  )
 ```
 
-To enable the Fedora Debuginfo repository with a wrapper cookbook, place
-the following in a recipe:
+Uncommonly used repositoryids are not managed by default. This is
+speeds up integration testing pipelines by avoiding yum-cache builds
+that nobody cares about. To enable the Fedora Debuginfo repository
+with a wrapper cookbook, place the following in a recipe:
 
 ```
+node.default['yum']['fedora-debuginfo']['managed'] = true
 node.default['yum']['fedora-debuginfo']['enabled'] = true
 include_recipe 'yum-fedora'
 ```
