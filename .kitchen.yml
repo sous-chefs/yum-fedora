@@ -6,6 +6,7 @@ provisioner:
 
 platforms:
   - name: fedora-19
+  - name: fedora-20
 
 suites:
   - name: default

@@ -4,4 +4,8 @@ default['yum']['updates-debuginfo']['mirrorlist'] = 'https://mirrors.fedoraproje
 default['yum']['updates-debuginfo']['enabled'] = false
 default['yum']['updates-debuginfo']['managed'] = false
 default['yum']['updates-debuginfo']['gpgcheck'] = true
-default['yum']['updates-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
+if node['platform_version'].to_i < 20
+  default['yum']['updates-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$basearch'
+else
+  default['yum']['updates-debuginfo']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch'
+end
