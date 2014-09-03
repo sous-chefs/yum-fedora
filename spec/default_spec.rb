@@ -26,7 +26,7 @@ describe 'yum-fedora::default' do
       end
     end
 
-    %w{
+    %w(
       fedora
       fedora-debuginfo
       fedora-source
@@ -36,7 +36,7 @@ describe 'yum-fedora::default' do
       updates-testing
       updates-testing-debuginfo
       updates-testing-source
-      }.each do |repo|
+    ).each do |repo|
       it "creates yum_repository[#{repo}]" do
         expect(chef_run).to create_yum_repository(repo)
       end

@@ -24,7 +24,7 @@ file '/etc/yum.repos.d/fedora-updates-testing.repo' do
   action :delete
 end
 
-%w{
+%w(
   fedora
   fedora-debuginfo
   fedora-source
@@ -34,7 +34,7 @@ end
   updates-testing
   updates-testing-debuginfo
   updates-testing-source
-}.each do |repo|
+).each do |repo|
   if node['yum'][repo]['managed']
     yum_repository repo do
       description node['yum'][repo]['description']
