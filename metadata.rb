@@ -1,6 +1,6 @@
 name 'yum-fedora'
 maintainer 'Chef'
-maintainer_email 'Sean OMeara <someara@getchef.com>'
+maintainer_email 'Sean OMeara <someara@chef.io>'
 license 'Apache 2.0'
 description 'Installs/Configures yum-fedora'
 version '0.3.0'
