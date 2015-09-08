@@ -5,8 +5,8 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: fedora-19
-  - name: fedora-20
+  - name: fedora-21
+  - name: fedora-22
 
 suites:
   - name: default
