@@ -1,5 +1,7 @@
 yum-fedora Cookbook
 ============
+[![Build Status](https://travis-ci.org/chef-cookbooks/yum-fedora.svg?branch=master)](http://travis-ci.org/chef-cookbooks/yum-fedora)
+[![Cookbook Version](https://img.shields.io/cookbook/v/yum-fedora.svg)](https://supermarket.chef.io/cookbooks/yum-fedora)
 
 The yum-fedora cookbook takes over management of the default
 repositoryids that ship with Fedora systems. It allows attribute
@@ -173,7 +175,7 @@ License & Authors
 - Author:: Sean OMeara (<someara@chef.io>)
 
 ```text
-Copyright:: 2011-2013 Chef Software, Inc.
+Copyright:: 2011-2015 Chef Software, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
