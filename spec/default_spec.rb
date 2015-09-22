@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'yum-fedora::default' do
   context 'yum-fedora::default uses default attributes' do
     let(:chef_run) do
-      ChefSpec::Runner.new do |node|
+      ChefSpec::ServerRunner.new do |node|
         node.set['yum']['fedora']['managed'] = true
         node.set['yum']['fedora-debuginfo']['managed'] = true
         node.set['yum']['fedora-source']['managed'] = true
