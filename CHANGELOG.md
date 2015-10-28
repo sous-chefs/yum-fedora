@@ -2,6 +2,10 @@ yum-fedora Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+v0.3.2 (2015-10-28)
+-------------------
+- Fixing Chef 13 nil property deprecation warnings
+
 v0.3.1 (2015-09-21)
 -------------------
 - Increased the yum depencency from ~3.0 to ~3.2
