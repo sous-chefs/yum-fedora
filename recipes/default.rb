@@ -73,6 +73,7 @@ end
     timeout node['yum'][repo]['timeout'] if  node['yum'][repo]['timeout']
     username node['yum'][repo]['username'] if node['yum'][repo]['username']
 
+    only_if { platform_family?('fedora') }
     action :create
   end
 end
