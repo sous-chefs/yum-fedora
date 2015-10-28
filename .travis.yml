@@ -14,7 +14,7 @@ services: docker
 
 env:
   matrix:
-  - INSTANCE=default-centos-71
+  - INSTANCE=default-fedora-22
 
 # Don't `bundle install`
 install: echo "skip bundle install"
