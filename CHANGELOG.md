@@ -1,6 +1,9 @@
 # yum-fedora Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## v0.3.4 (2015-11-30)
+- Fix attributes with a value of false being skipped
+
 ## v0.3.3 (2015-10-28)
 - #4 Guard against conflicting name spaces with other platforms #4
 
