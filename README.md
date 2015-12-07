@@ -127,7 +127,7 @@ default['yum']['updates-testing-source']['gpgkey'] = 'file:///etc/pki/rpm-gpg/RP
 ## Usage Example
 To disable the Fedora Updates repository through a Role or Environment definition
 
-```
+```ruby
 default_attributes(
   :yum => {
     :updates => {
@@ -141,7 +141,7 @@ default_attributes(
 
 Uncommonly used repositoryids are not managed by default. This is speeds up integration testing pipelines by avoiding yum-cache builds that nobody cares about. To enable the Fedora Debuginfo repository with a wrapper cookbook, place the following in a recipe:
 
-```
+```ruby
 node.default['yum']['fedora-debuginfo']['managed'] = true
 node.default['yum']['fedora-debuginfo']['enabled'] = true
 include_recipe 'yum-fedora'
@@ -150,7 +150,7 @@ include_recipe 'yum-fedora'
 ## More Examples
 Point the fedora and updates repositories at an internally hosted server.
 
-```
+```ruby
 node.default['yum']['fedora']['enabled'] = true
 node.default['yum']['fedora']['mirrorlist'] = nil
 node.default['yum']['fedora']['baseurl'] = 'https://internal.example.com/fedora/19/os/x86_64'
