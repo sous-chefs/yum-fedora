@@ -1,21 +1,11 @@
 driver:
-  name: dokken
-  chef_version: latest
-
-transport:
-  name: dokken
+  name: vagrant
 
 provisioner:
-  name: dokken
-
-verifier:
-  root_path: '/opt/verifier'
-  sudo: false
+  name: chef_zero
 
 platforms:
-- name: fedora-22
-  driver:
-    image: fedora:22
+- name: fedora-24
 
 suites:
   - name: default

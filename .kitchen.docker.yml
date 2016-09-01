@@ -1,0 +1,23 @@
+driver:
+  name: dokken
+  chef_version: latest
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+
+verifier:
+  root_path: '/opt/verifier'
+  sudo: false
+
+platforms:
+- name: fedora-latest
+  driver:
+    image: fedora:latest
+
+suites:
+  - name: default
+    run_list:
+      - recipe[yum-fedora::default]
