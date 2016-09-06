@@ -1,6 +1,12 @@
 # yum-fedora Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## 1.0.0 (2016-09-06)
+- Testing updates
+- Resolve rubocop warnings
+- Add chef_version metadata
+- Remove support for Chef 11
+
 ## v0.3.4 (2015-11-30)
 - Fix attributes with a value of false being skipped
 
