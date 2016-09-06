@@ -6,10 +6,10 @@ description 'Installs and configures the Fedora Yum repositories'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version '0.3.4'
 
-depends 'yum', '~> 3.2'
+depends 'yum', '>= 3.2', '< 5.0'
 supports 'fedora'
 
-source_url 'https://github.com/chef-cookbooks/yum-fedora' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/yum-fedora/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/yum-fedora'
+issues_url 'https://github.com/chef-cookbooks/yum-fedora/issues'
 
-chef_version '>= 11' if respond_to?(:chef_version)
+chef_version '>= 12'
