@@ -1,22 +1,31 @@
 # yum-fedora Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## 2.0.0 (2016-11-26)
+
+- Replace yum dependency with compat_resource
+
 ## 1.0.0 (2016-09-06)
+
 - Testing updates
 - Resolve rubocop warnings
 - Add chef_version metadata
 - Remove support for Chef 11
 
 ## v0.3.4 (2015-11-30)
+
 - Fix attributes with a value of false being skipped
 
 ## v0.3.3 (2015-10-28)
+
 - #4 Guard against conflicting name spaces with other platforms #4
 
 ## v0.3.2 (2015-10-28)
+
 - Fixing Chef 13 nil property deprecation warnings
 
 ## v0.3.1 (2015-09-21)
+
 - Increased the yum depencency from ~3.0 to ~3.2
 - Added Chef standard Rubocop file and resolved all warnings
 - Updated platforms in Kitchen CI config
@@ -31,6 +40,7 @@ This file is used to list changes made in each version of the yum-fedora cookboo
 - Added source_url and issues_url to metadata
 
 ## v0.3.0 (2014-09-02)
+
 #2 - Add all attribute available to LWRP to allow for tuning
 
 ## v0.2.2 (2014-03-12)
