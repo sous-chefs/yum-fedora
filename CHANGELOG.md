@@ -1,6 +1,12 @@
 # yum-fedora Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## 2.0.1 (2016-12-22)
+
+- Add integration testing with inspec
+- Depend on the latest compat_resource cookbook
+- Cookstyle fixes
+
 ## 2.0.0 (2016-11-26)
 
 - Replace yum dependency with compat_resource
