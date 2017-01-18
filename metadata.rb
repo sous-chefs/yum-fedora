@@ -11,4 +11,4 @@ supports 'fedora'
 
 source_url 'https://github.com/chef-cookbooks/yum-fedora'
 issues_url 'https://github.com/chef-cookbooks/yum-fedora/issues'
-chef_version '>= 12.1'
+chef_version '>= 12.1' if respond_to?(:chef_version)

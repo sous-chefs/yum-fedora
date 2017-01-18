@@ -8,7 +8,6 @@ The yum-fedora cookbook takes over management of the default repositoryids that 
 
 ### Platforms
 
-- RHEL/CentOS and derivatives
 - Fedora
 
 ### Chef
