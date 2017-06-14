@@ -1,6 +1,11 @@
 # yum-fedora Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## 2.0.2 (2017-06-14)
+
+- Switch from Rake testing to Local Delivery for testing
+- Update apache2 license string to use a SPDX compliant string
+
 ## 2.0.1 (2016-12-22)
 
 - Add integration testing with inspec
