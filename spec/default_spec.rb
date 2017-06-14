@@ -3,16 +3,16 @@ require 'spec_helper'
 describe 'yum-fedora::default' do
   context 'yum-fedora::default uses default attributes' do
     cached(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'fedora', version: 21) do |node|
-        node.normal['yum']['fedora']['managed'] = true
-        node.normal['yum']['fedora-debuginfo']['managed'] = true
-        node.normal['yum']['fedora-source']['managed'] = true
-        node.normal['yum']['updates']['managed'] = true
-        node.normal['yum']['updates-debuginfo']['managed'] = true
-        node.normal['yum']['updates-source']['managed'] = true
-        node.normal['yum']['updates-testing']['managed'] = true
-        node.normal['yum']['updates-testing-debuginfo']['managed'] = true
-        node.normal['yum']['updates-testing-source']['managed'] = true
+      ChefSpec::SoloRunner.new(platform: 'fedora', version: '25') do |node|
+        node.override['yum']['fedora']['managed'] = true
+        node.override['yum']['fedora-debuginfo']['managed'] = true
+        node.override['yum']['fedora-source']['managed'] = true
+        node.override['yum']['updates']['managed'] = true
+        node.override['yum']['updates-debuginfo']['managed'] = true
+        node.override['yum']['updates-source']['managed'] = true
+        node.override['yum']['updates-testing']['managed'] = true
+        node.override['yum']['updates-testing-debuginfo']['managed'] = true
+        node.override['yum']['updates-testing-source']['managed'] = true
       end.converge(described_recipe)
     end
 
