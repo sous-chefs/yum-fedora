@@ -9,7 +9,7 @@ verifier:
   name: inspec
 
 platforms:
-- name: fedora-25
+- name: fedora-26
 
 suites:
   - name: default
