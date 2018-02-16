@@ -1,6 +1,10 @@
 # yum-fedora Cookbook CHANGELOG
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## 3.0.0 (2018-02-16)
+
+- Require Chef 12.14+ and remove compat_resource dep
+
 ## 2.0.2 (2017-06-14)
 
 - Switch from Rake testing to Local Delivery for testing
