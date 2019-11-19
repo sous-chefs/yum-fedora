@@ -4,12 +4,13 @@ driver:
 provisioner:
   name: chef_zero
   deprecations_as_errors: true
+  chef_license: accept-no-persist
 
 verifier:
   name: inspec
 
 platforms:
-- name: fedora-26
+- name: fedora-latest
 
 suites:
   - name: default
