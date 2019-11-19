@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'yum-fedora::default' do
   context 'yum-fedora::default uses default attributes' do
     cached(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'fedora', version: '25') do |node|
+      ChefSpec::SoloRunner.new(platform: 'fedora') do |node|
         node.override['yum']['fedora']['managed'] = true
         node.override['yum']['fedora-debuginfo']['managed'] = true
         node.override['yum']['fedora-source']['managed'] = true
