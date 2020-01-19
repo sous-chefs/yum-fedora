@@ -10,7 +10,7 @@ verifier:
   name: inspec
 
 platforms:
-- name: fedora-latest
+  - name: fedora-latest
 
 suites:
   - name: default
