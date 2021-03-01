@@ -1,12 +1,10 @@
 # yum-fedora Cookbook
 
-
 [![Cookbook Version](https://img.shields.io/cookbook/v/yum-fedora.svg)](https://supermarket.chef.io/cookbooks/yum-fedora)
 [![CI State](https://github.com/sous-chefs/yum-fedora/workflows/ci/badge.svg)](https://github.com/sous-chefs/yum-fedora/actions?query=workflow%3Aci)
 [![OpenCollective](https://opencollective.com/sous-chefs/backers/badge.svg)](#backers)
 [![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
-
 
 The yum-fedora cookbook takes over management of the default repositoryids that ship with Fedora systems. It allows attribute manipulation of `fedora`, `fedora-debuginfo`, `fedora-source`, `updates`, `updates-debuginfo`, `updates-source`, `updates-testing`, `updates-testing-debuginfo`, and `updates-testing-source`
 
