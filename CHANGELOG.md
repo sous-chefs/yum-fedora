@@ -5,6 +5,7 @@ This file is used to list changes made in each version of the yum-fedora cookboo
 ## Unreleased
 
 - Sous Chefs adoption
+- Various style fixes
 
 ## 3.0.0 (2018-02-16)
 
