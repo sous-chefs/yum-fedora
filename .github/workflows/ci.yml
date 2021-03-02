@@ -43,6 +43,7 @@ jobs:
           - fedora-latest
         suite:
           - 'default'
+          - 'enable-all'
       fail-fast: false
 
     steps:
