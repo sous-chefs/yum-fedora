@@ -13,6 +13,9 @@ platforms:
   - name: fedora-latest
 
 suites:
+  - name: enable-all
+    run_list:
+      - recipe[fedora-test::all]
   - name: default
     run_list:
       - recipe[yum-fedora::default]
