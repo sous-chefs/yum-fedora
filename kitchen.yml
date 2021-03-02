@@ -15,7 +15,36 @@ platforms:
 suites:
   - name: enable-all
     run_list:
-      - recipe[fedora-test::all]
+      - recipe[yum-fedora::default]
+    attributes:
+      yum:
+        fedora:
+          managed: true
+          enabled: true
+        fedora-debuginfo:
+          managed: true
+          enabled: true
+        fedora-source:
+          managed: true
+          enabled: true
+        updates:
+          managed: true
+          enabled: true
+        updates-debuginfo:
+          managed: true
+          enabled: true
+        updates-source:
+          managed: true
+          enabled: true
+        updates-testing:
+          managed: true
+          enabled: true
+        updates-testing-debuginfo:
+          managed: true
+          enabled: true
+        updates-testing-source:
+          managed: true
+          enabled: true
   - name: default
     run_list:
       - recipe[yum-fedora::default]
