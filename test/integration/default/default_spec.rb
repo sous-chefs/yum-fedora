@@ -1,19 +1,24 @@
-describe file('/etc/yum.repos.d/fedora-updates.repo') do
-  it { should_not exist }
-end
+e_rel = os.release.to_i
+e_arch = 'x86_64'
 
-describe file('/etc/yum.repos.d/fedora-updates-testing.repo') do
-  it { should_not exist }
-end
-
-describe file('/etc/yum.repos.d/fedora.repo') do
+describe yum.repo('fedora') do
   it { should exist }
-  it { should be_owned_by 'root' }
-  it { should be_grouped_into 'root' }
+  it { should be_enabled }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=fedora-#{e_rel}&arch=#{e_arch}" }
 end
 
-describe file('/etc/yum.repos.d/updates.repo') do
+describe yum.repo('updates') do
   it { should exist }
-  it { should be_owned_by 'root' }
-  it { should be_grouped_into 'root' }
+  it { should be_enabled }
+  its('mirrors') { should cmp "https://mirrors.fedoraproject.org/metalink?repo=updates-released-f#{e_rel}&arch=#{e_arch}" }
+end
+
+%w(
+  fedora
+  updates
+).each do |repo|
+  describe ini("/etc/yum.repos.d/#{repo}.repo") do
+    its("#{repo}.gpgcheck") { should cmp 1 }
+    its("#{repo}.gpgkey") { should cmp 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch' }
+  end
 end
