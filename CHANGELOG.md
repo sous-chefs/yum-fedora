@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## Unreleased
+
 ## 3.1.0 - *2021-03-03*
 
 - Sous Chefs adoption
