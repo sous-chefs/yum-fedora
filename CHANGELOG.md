@@ -6,6 +6,7 @@ This file is used to list changes made in each version of the yum-fedora cookboo
 
 - Sous Chefs adoption
 - Various style fixes
+- Remove references to < Fedora 20
 
 ## 3.0.0 (2018-02-16)
 
