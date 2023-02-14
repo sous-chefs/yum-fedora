@@ -4,6 +4,8 @@ This file is used to list changes made in each version of the yum-fedora cookboo
 
 ## Unreleased
 
+## 3.1.3 - *2023-02-14*
+
 ## 3.1.2 - *2021-08-31*
 
 - Standardise files with files in sous-chefs/repo-management
