@@ -2,6 +2,8 @@
 
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## Unreleased
+
 ## 3.1.8 - *2025-09-04*
 
 ## 3.1.7 - *2024-05-01*
