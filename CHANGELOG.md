@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## [3.1.9](https://github.com/sous-chefs/yum-fedora/compare/3.1.8...v3.1.9) (2025-10-16)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#29](https://github.com/sous-chefs/yum-fedora/issues/29)) ([c9eb35d](https://github.com/sous-chefs/yum-fedora/commit/c9eb35d8fed17afb86c1b4bd8debceaba2b0255f))
+
 ## 3.1.2 - *2021-08-31*
 
 * Standardise files with files in sous-chefs/repo-management
