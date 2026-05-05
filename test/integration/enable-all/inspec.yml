@@ -1,0 +1,7 @@
+---
+name: enable-all
+title: All Fedora Repository Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Verifies all yum-fedora repositories can be managed and enabled
+version: 1.0.0
