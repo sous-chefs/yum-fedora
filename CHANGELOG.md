@@ -2,6 +2,22 @@
 
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## [4.0.0](https://github.com/sous-chefs/yum-fedora/compare/v3.1.9...v4.0.0) (2026-05-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate yum-fedora to custom resources ([#34](https://github.com/sous-chefs/yum-fedora/issues/34))
+
+### Features
+
+* migrate yum-fedora to custom resources ([#34](https://github.com/sous-chefs/yum-fedora/issues/34)) ([23a15bb](https://github.com/sous-chefs/yum-fedora/commit/23a15bbaaf900cb8162975e4eac8030ed4829ddb))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#29](https://github.com/sous-chefs/yum-fedora/issues/29)) ([c9eb35d](https://github.com/sous-chefs/yum-fedora/commit/c9eb35d8fed17afb86c1b4bd8debceaba2b0255f))
+
 ## [3.1.9](https://github.com/sous-chefs/yum-fedora/compare/3.1.8...v3.1.9) (2025-10-16)
 
 
