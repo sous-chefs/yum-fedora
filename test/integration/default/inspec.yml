@@ -1,0 +1,7 @@
+---
+name: default
+title: Default Fedora Repository Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Verifies default yum-fedora repositories
+version: 1.0.0

@@ -1,50 +1,43 @@
+---
 driver:
   name: vagrant
 
 provisioner:
-  name: chef_zero
+  name: chef_infra
+  product_name: chef
+  product_version: latest
+  channel: stable
   deprecations_as_errors: true
-  chef_license: accept-no-persist
+  chef_license: accept
+  multiple_converge: 2
+  enforce_idempotency: true
 
 verifier:
   name: inspec
+  sudo: true
 
 platforms:
   - name: fedora-latest
 
+x-run_lists:
+  default: &default_run_list
+    - recipe[test::default]
+  enable_all: &enable_all_run_list
+    - recipe[test::enable_all]
+
+x-verifiers:
+  default: &default_verifier
+    inspec_tests:
+      - path: test/integration/default
+  enable_all: &enable_all_verifier
+    inspec_tests:
+      - path: test/integration/enable-all
+
 suites:
-  - name: enable-all
-    run_list:
-      - recipe[yum-fedora::default]
-    attributes:
-      yum:
-        fedora:
-          managed: true
-          enabled: true
-        fedora-debuginfo:
-          managed: true
-          enabled: true
-        fedora-source:
-          managed: true
-          enabled: true
-        updates:
-          managed: true
-          enabled: true
-        updates-debuginfo:
-          managed: true
-          enabled: true
-        updates-source:
-          managed: true
-          enabled: true
-        updates-testing:
-          managed: true
-          enabled: true
-        updates-testing-debuginfo:
-          managed: true
-          enabled: true
-        updates-testing-source:
-          managed: true
-          enabled: true
   - name: default
-    run_list:
-      - recipe[yum-fedora::default]
+    run_list: *default_run_list
+    verifier: *default_verifier
+
+  - name: enable-all
+    run_list: *enable_all_run_list
+    verifier: *enable_all_verifier
