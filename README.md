@@ -31,8 +31,8 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ## Resources
 
-* [yum_fedora_repository](documentation/yum_fedora_repository.md)
-* [yum_fedora_repositories](documentation/yum_fedora_repositories.md)
+- [yum_fedora_repository](documentation/yum_fedora_repository.md)
+- [yum_fedora_repositories](documentation/yum_fedora_repositories.md)
 
 ## Migration
 
