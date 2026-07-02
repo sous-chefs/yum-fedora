@@ -4,6 +4,7 @@ driver:
 
 provisioner:
   name: chef_infra
+  policyfile_path: Policyfile.rb
   product_name: chef
   product_version: latest
   channel: stable
@@ -19,12 +20,6 @@ verifier:
 platforms:
   - name: fedora-latest
 
-x-run_lists:
-  default: &default_run_list
-    - recipe[test::default]
-  enable_all: &enable_all_run_list
-    - recipe[test::enable_all]
-
 x-verifiers:
   default: &default_verifier
     inspec_tests:
@@ -35,9 +30,11 @@ x-verifiers:
 
 suites:
   - name: default
-    run_list: *default_run_list
+    provisioner:
+      named_run_list: default
     verifier: *default_verifier
 
   - name: enable-all
-    run_list: *enable_all_run_list
+    provisioner:
+      named_run_list: enable_all
     verifier: *enable_all_verifier
