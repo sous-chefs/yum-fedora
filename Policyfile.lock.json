@@ -1,0 +1,91 @@
+{
+  "revision_id": "096921f1151a93c31290bc8c9ce85a375a2e2aaccda1ae03edbb11c6224c1f1d",
+  "name": "yum-fedora",
+  "run_list": [
+    "recipe[test::default]"
+  ],
+  "named_run_lists": {
+    "default": [
+      "recipe[test::default]"
+    ],
+    "enable_all": [
+      "recipe[test::enable_all]"
+    ]
+  },
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "test": {
+      "version": "0.1.0",
+      "identifier": "1165035aa010a53416aaa6c92ab0b07bce03d431",
+      "dotted_decimal_identifier": "4896139683827877.14661620987407024.194045783823409",
+      "source": "test/cookbooks/test",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "git@github.com:sous-chefs/yum-fedora.git",
+        "revision": "3a7f1763e91b04050d86a8d6367f13b74ee86b7b",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/main",
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "test/cookbooks/test"
+      }
+    },
+    "yum-fedora": {
+      "version": "4.0.0",
+      "identifier": "45683ebdaf80392f040c61aef35daf9c732a840e",
+      "dotted_decimal_identifier": "19536392072691769.13233775130375005.193086481925134",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "git@github.com:sous-chefs/yum-fedora.git",
+        "revision": "3a7f1763e91b04050d86a8d6367f13b74ee86b7b",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/main",
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "test",
+        ">= 0.0.0"
+      ],
+      [
+        "yum-fedora",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "test (0.1.0)": [
+        [
+          "yum-fedora",
+          ">= 0.0.0"
+        ]
+      ],
+      "yum-fedora (4.0.0)": [
+
+      ]
+    }
+  }
+}

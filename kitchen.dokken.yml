@@ -8,6 +8,7 @@ transport: { name: dokken }
 
 provisioner:
   name: dokken
+  policyfile_path: Policyfile.rb
   multiple_converge: 2
   enforce_idempotency: true
 
