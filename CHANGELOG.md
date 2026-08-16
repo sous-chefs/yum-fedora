@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the yum-fedora cookbook.
 
+## [4.0.1](https://github.com/sous-chefs/yum-fedora/compare/v4.0.0...v4.0.1) (2026-08-16)
+
+
+### Bug Fixes
+
+* stop tracking Policyfile.lock.json ([#45](https://github.com/sous-chefs/yum-fedora/issues/45)) ([f14b048](https://github.com/sous-chefs/yum-fedora/commit/f14b0483f69770f463ce4e51a07a0ca8d0f812a4))
+
 ## [4.0.0](https://github.com/sous-chefs/yum-fedora/compare/v3.1.9...v4.0.0) (2026-05-05)
 
 
